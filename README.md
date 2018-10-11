@@ -3,20 +3,20 @@
 ## Usage
   1. Copy the `conan/` directory into the upstream project
   2. Create a `conanfile.py` with the recipe, you can use [this template file](https://github.com/bincrafters/conan-templates/blob/master/conanfile.py)
-    * change the `source` method to:
-      ```     
-      def source(self):
-          # Wrap the original CMake file to call conan_basic_setup
-          shutil.move("CMakeLists.txt", "CMakeListsOriginal.txt")
-          shutil.move(os.path.join("conan", "CMakeLists.txt"), "CMakeLists.txt")
-      ```
+     * change the `source` method to:
+        ```     
+        def source(self):
+            # Wrap the original CMake file to call conan_basic_setup
+            shutil.move("CMakeLists.txt", "CMakeListsOriginal.txt")
+            shutil.move(os.path.join("conan", "CMakeLists.txt"), "CMakeLists.txt")
+        ```
   3. Open the `.travis.yml`, search for `TODO` and follow the explanations
   4. Open the `appyevor.yml`, search for `TODO` and follow the explanations
   5. Save the adjusted `.travis.yml` and `appveyor.yml` files in the upstream project
   6. Set the following environment variables in the Travis and AppVeyor UI (**don't forget encryption**):
-    * `CONAN_UPLOAD`: API URL to your Conan repository (most likely Bintray)
-    * `CONAN_LOGIN_USERNAME`: Your Conan repository username (e.g. Bintray username)
-    * `CONAN_PASSWORD` Your Conan repository password (e.g. Bintray API key)
+     * `CONAN_UPLOAD`: API URL to your Conan repository (most likely Bintray)
+     * `CONAN_LOGIN_USERNAME`: Your Conan repository username (e.g. Bintray username)
+     * `CONAN_PASSWORD` Your Conan repository password (e.g. Bintray API key)
 
 ## Features
   * generic files across different projects for easy maintainance and future updates
