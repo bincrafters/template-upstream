@@ -32,9 +32,13 @@
 ## Issue tracker
 The issue tracker can be found here: https://github.com/bincrafters/community/issues
 
+
 ## Stability
 ### DO NOT INTRODUCE BREAKING BEHAVIOUR
 Only if it is absolutely neccessary or the benefits are extremely huge. If there are breaking changes **document them in this readme**. These templates are meant to be shared between very different projects with different setups and building environments and it's a terrible idea to start maintaining these files seperately for all of these projects.
+
+### Extending with new features
+Only introduce new features if they are actually used by some specific project which plans to and has already adopted Conan.
 
 
 ## Known projects which are using a version of this template
