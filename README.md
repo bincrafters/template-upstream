@@ -23,7 +23,7 @@
   * easily configurable through environment variables
   * builds and uploads packages on git tag pushes
     * it uses the name of the git tag as version
-      * no manually version string maintaining within the `conanfile.py`
+      * no manually version string maintaining required within the `conanfile.py`
     * it removes the `v` from the git tag (if there is one)
   * uploads the recipe-only as a master version on pushes to the master branch
     * this can be easily removed
