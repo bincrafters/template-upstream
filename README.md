@@ -23,11 +23,21 @@
   * easily configurable through environment variables
   * builds and uploads packages on git tag pushes
     * it uses the name of the git tag as version
+      * no manually version string maintaining within the `conanfile.py`
     * it removes the `v` from the git tag (if there is one)
   * uploads the recipe-only as a master version on pushes to the master branch
     * this can be easily removed
   * tests on every non-tag and non-master push a single `conan create` build on every OS
 
+
+## Optional environment variables
+The following optional environment variables can change the behaviour of the builds.
+  * `CONAN_PACKAGE_VERSION`: E.g. `"1.0.0", "1.3.1"`. Default: Value of git tag. Gets used as the version number for the package.
+  * `CONAN_CHANNEL`: E.g. `"stable", "testing"` Default: `stable`. Gets used as the channel name for the package.
+  * `CONAN_DISABLE_SHARED_BUILD`: `"True", "False"`, Default: `False`. Disabled shared builds even when there is a shared option. Use this if shared builds are not supported on some configurations to prevent CI from failing.
+  * `CONAN_UPLOAD_ONLY_WHEN_STABLE`: `"True", "False"`, Default: `True`. Only upload builds which are considered as stable (= releases).
+  * `CONAN_STABLE_BRANCH_PATTERN`: Default: `r"v\d+\.\d+\.\d+.*"`. Pattern to let the build system know which builds are considered as stable.
+  * `CPT_TEST_FOLDER`: Default: `conan/test_package`. Path to a Conan test_package.
 
 ## Issue tracker
 The issue tracker can be found here: https://github.com/bincrafters/community/issues
