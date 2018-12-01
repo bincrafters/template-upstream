@@ -38,6 +38,8 @@ The following optional environment variables can change the behaviour of the bui
   * `CONAN_UPLOAD_ONLY_WHEN_STABLE`: `"True", "False"`, Default: `True`. Only upload builds which are considered as stable (= releases).
   * `CONAN_STABLE_BRANCH_PATTERN`: Default: `r"v\d+\.\d+\.\d+.*"`. Pattern to let the build system know which builds are considered as stable.
   * `CPT_TEST_FOLDER`: Default: `conan/test_package`. Path to a Conan test_package.
+  * `CONAN_HEADER_ONLY`: `"True", "False"`, Default: `False`.
+  * `CONAN_PURE_C`: `"True", "False"`, Default: `False`.
 
 ## Issue tracker
 The issue tracker can be found here: https://github.com/bincrafters/community/issues
