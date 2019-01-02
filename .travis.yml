@@ -1,4 +1,3 @@
-sudo: required
 dist: xenial
 language: cpp
 
@@ -27,9 +26,8 @@ conan-buildsteps: &conan-buildsteps
   if: tag IS present
 conan-linux: &conan-linux
   os: linux
-  sudo: required
   language: python
-  python: "3.6"
+  python: "3.7"
   services:
     - docker
   <<: *conan-buildsteps
@@ -46,7 +44,7 @@ matrix:
     - compiler: gcc
       env: CONAN=True
       language: python
-      python: "3.6"
+      python: "3.7"
       before_install:
         - pip install -U pip
       install:
@@ -101,7 +99,7 @@ matrix:
     - <<: *conan-linux
       env: CONAN_CLANG_VERSIONS=6.0 CONAN_DOCKER_IMAGE=conanio/clang60
     - <<: *conan-linux
-      env: CONAN_CLANG_VERSIONS=7 CONAN_DOCKER_IMAGE=conanio/clang7
+      env: CONAN_CLANG_VERSIONS=7.0 CONAN_DOCKER_IMAGE=conanio/clang7
     - <<: *conan-osx
       osx_image: xcode7.3
       env: CONAN_APPLE_CLANG_VERSIONS=7.3
@@ -115,7 +113,7 @@ matrix:
       osx_image: xcode9.4
       env: CONAN_APPLE_CLANG_VERSIONS=9.1
     - <<: *conan-osx
-      osx_image: xcode10
+      osx_image: xcode10.1
       env: CONAN_APPLE_CLANG_VERSIONS=10.0
 
 # ---- TODO: Place here all existing default build steps ----
