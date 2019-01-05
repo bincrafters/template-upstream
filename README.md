@@ -56,3 +56,4 @@ Only introduce new features if they are actually used by some specific project w
 ## Known projects which are using a version of this template
   * [google/flatbuffers](https://github.com/google/flatbuffers)
   * [skypjack/uvw](https://github.com/skypjack/uvw)
+  * [BehaviorTree/BehaviorTree.CPP](https://github.com/BehaviorTree/BehaviorTree.CPP)
